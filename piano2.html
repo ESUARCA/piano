@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <!-- en este bloque se le dan los estilos al identificadore y clases   -->
+   <style>
+     .piano {
+       display: flex;
+       justify-content: center;
+     }
+     .tecla {
+       border: 1px solid black;
+       width: 50px;
+       height: 200px;
+       display: flex;
+       justify-content: center;
+     }
+     .sostenido {
+       background-color: black;
+       color: white;
+       max-width: 40px;
+       max-height: 120px;
+       margin-left: -20px;
+       margin-right: -20px;
+       z-index: 1;
+     }
+     h1 {
+       display: flex;
+       justify-content: center;
+     }
+   </style>
+ </head>
+ <body>
+   <h1>#hablemosDeJS</h1>
+   <div class="piano">
+     <div class="tecla c" onclick="reproducir('c');">c</div>
+     <div class="tecla sostenido cs" onclick="reproducir('cs');">c#</div>
+     <div class="tecla d" onclick="reproducir('d');">d</div>
+ <audio id="audio-c" src="c.wav" type="audio/wav"></audio>
+   <audio id="audio-cs" src="cs.wav" type="audio/wav"></audio>
+   <audio id="audio-d" src="d.wav" type="audio/wav"></audio>
+   <script>
+     function reproducir(nota) {
+          
+       document.getElementById(`audio-${nota}`).play();
+     }
+   </script>
+ </body>
+</html>
